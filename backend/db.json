@@ -1,0 +1,34 @@
+{
+  "pensamentos": [
+    {
+      "id": 1,
+      "conteudo": "Que bom que você veio eu estou muito feliz",
+      "autoria": "Sasa <3",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 2,
+      "conteudo": "Eu amo sair e andar na praia a noite",
+      "autoria": "Sasa",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 3,
+      "conteudo": "É muito bom sair com o Lipe e conhecer novos restaurantes",
+      "autoria": "Sasa",
+      "modelo": "modelo1"
+    },
+    {
+      "conteudo": "Ola testando ",
+      "autoria": "Sasa",
+      "modelo": "modelo1",
+      "id": 4
+    },
+    {
+      "conteudo": "Quero adicionar uma nova memória :)",
+      "autoria": "Sabrina linda",
+      "modelo": "modelo1",
+      "id": 5
+    }
+  ]
+}
