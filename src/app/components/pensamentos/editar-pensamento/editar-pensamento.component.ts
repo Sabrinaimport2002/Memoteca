@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PensamentosService } from './../../../services/pensamentos.service';
 import { Pensamento } from 'src/app/model/pensamento';
@@ -9,30 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-pensamento.component.css']
 })
 export class EditarPensamentoComponent implements OnInit {
-  pensamento: Pensamento = {
-    id: 0,
-    conteudo: '',
-    autoria: '',
-    modelo: ''
-  }
 
   constructor(
     private pensamentosService: PensamentosService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
     ) { }
+
+    formulario!: FormGroup
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
     this.pensamentosService.buscarPorId(parseInt(id!)).subscribe({
       next: (pensamento) => {
-        this.pensamento = pensamento
+        this.formulario = this.formBuilder.group({
+          id: [pensamento.id],
+          conteudo: [pensamento.conteudo, Validators.compose([
+            Validators.required,
+            Validators.pattern(/(.|\s)*\S(.|\s)*/)
+          ])],
+          autoria: [pensamento.autoria, Validators.compose([
+            Validators.required,
+            Validators.minLength(3)
+          ])],
+          modelo: [pensamento.modelo],
+          favorito: [pensamento.favorito]
+        })
       }
     })
   }
 
   editarPensamento(){
-    this.pensamentosService.editar(this.pensamento).subscribe({
+    this.pensamentosService.editar(this.formulario.value).subscribe({
       next: ()=>{
         this.router.navigate(['/listarPensamento'])
       }
@@ -42,4 +52,13 @@ export class EditarPensamentoComponent implements OnInit {
   cancelar(){
     this.router.navigate(['/listarPensamentos'])
   }
+
+  habilitarBotao(): string {
+    if(this.formulario.valid) {
+      return 'botao'
+    }else {
+      return 'botao__desabilitado'
+    }
+  }
+
 }

@@ -4,31 +4,36 @@
       "id": 1,
       "conteudo": "Que bom que você veio eu estou muito feliz",
       "autoria": "Sasa <3",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": true
     },
     {
       "id": 2,
       "conteudo": "Eu amo sair e andar na praia a noite",
       "autoria": "Sasa",
-      "modelo": "modelo3"
-    },
-    {
-      "id": 3,
-      "conteudo": "É muito bom sair com o Lipe e conhecer novos restaurantes",
-      "autoria": "Sasa",
-      "modelo": "modelo1"
-    },
-    {
-      "conteudo": "Ola testando ",
-      "autoria": "Sasa",
-      "modelo": "modelo1",
-      "id": 4
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "conteudo": "Quero adicionar uma nova memória :)",
       "autoria": "Sabrina linda",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
+    },
+    {
+      "conteudo": "Estou buscando um amor verdadeiro",
+      "autoria": "Sabrina né, quem mais poderia ser",
+      "modelo": "modelo1",
+      "favorito": false,
+      "id": 7
+    },
+    {
+      "conteudo": "Aprendendo angular",
+      "autoria": "Sabrina",
+      "modelo": "modelo2",
+      "favorito": true,
+      "id": 8
     }
   ]
 }
